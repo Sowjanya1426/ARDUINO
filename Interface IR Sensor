@@ -1,0 +1,16 @@
+int LED = 12;
+  int IRSENSOR = 8;
+  int STATUSSENSOR;
+void setup()
+{
+pinMode(LED,OUTPUT);
+pinMode(IRSENSOR,INPUT);
+}
+void loop()
+{
+  STATUSSENSOR = digitalRead(IRSENSOR);
+  if(STATUSSENSOR==LOW)
+   digitalWrite(LED,HIGH);
+  else
+   digitalWrite(LED,LOW);
+}
