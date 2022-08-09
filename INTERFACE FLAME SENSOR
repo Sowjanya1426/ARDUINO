@@ -1,0 +1,29 @@
+int flame=HIGH;
+int LED1=6;
+int LED2=5;
+const int buzz=3;
+const int flamepin=4;
+void setup() 
+{
+  pinMode(buzz,OUTPUT);
+  pinMode(LED1,OUTPUT);
+  pinMode(LED2,OUTPUT);
+  pinMode(flamepin,INPUT);
+  Serial.begin(9600);
+}
+void loop()
+{
+ flame=digitalRead(flamepin);
+ if(flame==LOW)
+ {
+  digitalWrite(buzz,HIGH);
+  digitalWrite(LED1,HIGH);
+  digitalWrite(LED2,LOW);
+ }
+else
+ {
+  digitalWrite(buzz,LOW);
+  digitalWrite(LED1,LOW);
+  digitalWrite(LED2,HIGH);
+ }
+}
